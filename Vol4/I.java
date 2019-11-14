@@ -1,12 +1,5 @@
 // Pai Natal insuflável com escada
 
-/*-----------------------------------------------------------------------*\
-|  Exemplo de implementacao de fila de prioridade (por heap de minimo)    |
-|                                                                         |
-|   A.P.Tomas, CC2001 (material para prova pratica), DCC-FCUP, 2017       |
-|   Last modified: 2017.12.18                                             |
-\*-----------------------------------------------------------------------*/
-
 import java.lang.*;
 import java.util.*;
 
