@@ -1,14 +1,6 @@
+// Sobrecarga de trabalhos
+
 import java.util.*;
-
-/*-------------------------------------------------------------------*\
-|  Definicao de grafos com UM peso (int)                              |
-|     Assume-se que os vertices sao numerados de 1 a |V|.             |
-|                                                                     |
-|   A.P.Tomas, CC2001 (material para prova pratica), DCC-FCUP, 2017   |
-|   Last modified: 2017.12.18                                         |
-\--------------------------------------------------------------------*/
-
-import java.util.LinkedList;
 
 class Arco {
     int no_final;
@@ -132,9 +124,7 @@ class F {
 
 
         // calcular nº max de tarefas a decorrer ao msm tempo e o 1ºinstante em que isso acontece
-        int instantes[] = new int[durmin+1];
-        for (int i=0; i<=durmin; i++) instantes[i]=0;
-        
+        int instantes[] = new int[durmin+1];        
         for (int v=1; v<=g.num_vertices(); v++) {
             LinkedList<Arco> adjs = g.adjs_no(v);
             for (Arco a : adjs) {
