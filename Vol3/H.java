@@ -3,16 +3,6 @@
 import java.lang.*;
 import java.util.*;
 
-/*-------------------------------------------------------------------*\
-|  Definicao de grafos com UM peso (int)                              |
-|     Assume-se que os vertices sao numerados de 1 a |V|.             |
-|                                                                     |
-|   A.P.Tomas, CC2001 (material para prova pratica), DCC-FCUP, 2017   |
-|   Last modified: 2017.12.18                                         |
-\--------------------------------------------------------------------*/
-
-import java.util.LinkedList;
-
 class Arco {
     int no_final;
     int valor;
