@@ -140,11 +140,16 @@ class Heapmax {
 
 
 class dijkstraCapacidades {
+    public static int min(int a, int b) {
+	 if (a<b) return a;
+	 return b;
+    }
+	
     public static void dijkstraCap(Grfao g, int s) {
         int cap[] = new int[g.num_vertices()+1];
         int pai[] = new int[g.num_vertices()+1];
         cap[s] = 10000;
-        Heapmax q = new Heapmax(cap, g-num_vertices());
+        Heapmax q = new Heapmax(cap, g.num_vertices());
 
         while (!q.isEmpty()) {
             int v = q.extractMax();
