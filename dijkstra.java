@@ -147,8 +147,8 @@ class dijkstra {
             pai[i] = -1;
         }
 
+	dist[s] = 0;
         Heapmin q = new Heapmin(dist, g.num_vertices());
-        dist[s] = 0;
 
         while (!q.isEmpty()) {
             int v = q.extractMin();
