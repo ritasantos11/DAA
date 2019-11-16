@@ -64,28 +64,31 @@ class Grafo0 {
 
 
 class A {
-	public static int bfs(Grafo0 g, int origem) {
+	public static void bfs(Grafo0 g, int origem, int id[]) {
 		boolean[] visitado = new boolean[g.num_vertices()+1];
 		Queue<Integer> q = new LinkedList<>();
 		q.add(origem);
 		visitado[origem] = true;
-		
+		id[origem] = -1;
+
 		int max = origem, v, w;
 		while (!q.isEmpty()) {
 			v = q.remove();
 			LinkedList<Arco> adjs = g.adjs_no(v);
 			for (Arco a : adjs) {
 				w = a.extremo_final();
-				if (w>max)
-					max = w;
+
 				if (!visitado[w]) {
-					q.add(w);
 					visitado[w] = true;
+					id[w] = -1;
+					if (w>max) max = w;
+					q.add(w);
 				}
 			}
 		}
-		
-		return max;
+
+		for (int i=1; i<=g.num_vertices(); i++)
+			if (id[i]==-1) id[i] = max;
 	}
 		
 	public static void main(String[] args) {
@@ -93,7 +96,7 @@ class A {
 		
 		int nos = stdin.nextInt();
 		int ramos = stdin.nextInt();
-		Grafo0 g = new Grafo0(nos+1);
+		Grafo0 g = new Grafo0(nos);
 		
 		int noA, noB;
 		int i;
@@ -107,16 +110,13 @@ class A {
 		}
 		
 		int id[] = new int[nos+1];
-		for (i=1; i<=nos; i++)
-			id[i] = 0;
-		
 		int v;
 		int nquestoes = stdin.nextInt();
 		for (i=0; i<nquestoes; i++) {
 			v = stdin.nextInt();
 			
 			if (id[v] == 0) {
-				id[v] = bfs(g,v);
+				bfs(g, v, id);
 				System.out.println("No " + v + ": " + id[v]);
 			}
 			
