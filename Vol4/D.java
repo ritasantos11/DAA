@@ -248,13 +248,9 @@ class D {
             n = pai[n];
         }
 
-        
-            if (cont<=customax) System.out.println("Sim");
-            else System.out.println("Nao");
-        
-    
+        if (cont<=customax) System.out.println("Sim");
+       	else System.out.println("Nao");
     }
-
 
     public static void main(String[] args) {
         Scanner stdin = new Scanner(System.in);
